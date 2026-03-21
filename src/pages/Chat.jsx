@@ -105,7 +105,7 @@ export default function Chat() {
        setMessages(prev => [...prev, { 
           id: Date.now() + 1, 
           sender: 'ai', 
-          text: "I am having trouble connecting to the network right now. Please try again or log in." 
+          text: `Error: ${error.response?.data?.message || error.message || 'Unknown network error'}` 
         }]);
     } finally {
       setLoading(false);
