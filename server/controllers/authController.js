@@ -122,7 +122,7 @@ const googleAuth = async (req, res) => {
     });
   } catch (error) {
     console.error('Google Auth Error:', error);
-    res.status(401).json({ message: 'Invalid Google Identity Token' });
+    res.status(401).json({ message: `Google Auth Error: ${error.message}` });
   }
 };
 
