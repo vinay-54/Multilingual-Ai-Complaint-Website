@@ -22,7 +22,7 @@ import AdminUsers from './pages/AdminUsers';
 
 function App() {
   // Using a fallback client ID so UI renders locally without crashing, though auth will fail verification
-  const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID || "26026387140-pimmbf2brff7vvhg6ag3cc4strl0qi9f.apps.googleusercontent.com";
+  const GOOGLE_CLIENT_ID = import.meta.env.GOOGLE_CLIENT_ID || import.meta.env.VITE_GOOGLE_CLIENT_ID || "26026387140-pimmbf2brff7vvhg6ag3cc4strl0qi9f.apps.googleusercontent.com";
 
   return (
     <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
