@@ -25,7 +25,8 @@ export default function Login() {
       await googleLogin(credentialResponse.credential);
       navigate('/');
     } catch (err) {
-      setError('Google Server Login Processing Failed');
+      console.error(err);
+      setError(err.response?.data?.message || err.message || 'Google Server Login Processing Failed');
     }
   };
 
